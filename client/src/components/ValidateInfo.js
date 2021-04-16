@@ -18,7 +18,7 @@ const ValidateInfo = values => {
         errors.email = 'Email address is invalid';
     }
     if (!values.gender) {
-        errors.gender = "Select appropriate gender"
+        errors.gender = "Gender required"
     }
 
     return errors;  

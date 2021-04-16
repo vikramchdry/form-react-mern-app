@@ -2,7 +2,7 @@
 .form{
     
     margin-top: 5%;
-    height: 850px;
+    height: 870px;
 }
 .formInfo{
     text-align: center;
@@ -41,7 +41,8 @@
     border-radius: 15px;
 }
 .form__light{
-    font-size: 15px;
+    margin: 1px;
+    font-size: 18px;
     color: rgb(173, 38, 28);
 }
 .datePicker__Birthday{

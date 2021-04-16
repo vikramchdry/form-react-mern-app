@@ -31,14 +31,14 @@ const HandleState = (validate) => {
 
     };
 
-    const api = "https://extensi.io/api/email-validator.php?email=karol@wp.pl";
-    const getData = async () => {
-      await axios.get("/api/email-validator.php?email=karol@wp.pl")
-       .then(res => console.log(res))
+    //const api = "https://extensi.io/api/email-validator.php?email=karol@wp.pl";
+   // const getData = async () => {
+   //   await axios.get("/api/email-validator.php?email=karol@wp.pl")
+   //    .then(res => console.log(res))
        //.then(receivedData => setData(receivedData))
 
-      }
-      getData()
+  //    }
+  //    getData()
      //console.log(data)
 
 
