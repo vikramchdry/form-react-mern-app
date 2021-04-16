@@ -16,7 +16,7 @@ const HandleState = (validate) => {
 
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
- //   const [data, setData] = useState([])
+    //   const [data, setData] = useState([])
 
 
     const handleChange = e => {
@@ -31,19 +31,20 @@ const HandleState = (validate) => {
 
     };
 
-    //const api = "https://extensi.io/api/email-validator.php?email=karol@wp.pl";
-   // const getData = async () => {
-     //   await axios.get("https://extensi.io/api/email-validator.php?email=karol@wp.pl")
-        //    .then(res => res.json())
-        //    .then(receivedData => setData(receivedData))
+    const api = "https://extensi.io/api/email-validator.php?email=karol@wp.pl";
+    const getData = async () => {
+      await axios.get("/api/email-validator.php?email=karol@wp.pl")
+       .then(res => console.log(res))
+       //.then(receivedData => setData(receivedData))
 
- //   }
-  //  console.log(data)
+      }
+      getData()
+     //console.log(data)
 
 
- //   useEffect(() => {
-  //      getData();
-  //  }, []);
+    //   useEffect(() => {
+    //      getData();
+    //  }, []);
 
 
 
@@ -63,7 +64,7 @@ const HandleState = (validate) => {
                 });
             setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
         }
-       //setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
+        //setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
         //setValues({ firstname: , surname: values, email: values, dob: values, gender: values })
 
 
