@@ -1,7 +1,7 @@
 {
   "name": "client",
-  "proxy": "http://localhost:5000",
   "version": "0.1.0",
+  "config-overrides-path": "node_modules/some-preconfigured-rewire",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",

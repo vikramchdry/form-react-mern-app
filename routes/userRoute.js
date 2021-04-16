@@ -19,10 +19,10 @@ require('dotenv').config();
 // res.sendFile('index.html', { global: root });
 //})
 
-router.get('/', (req, res) => {
-  console.log('get request')
-  res.send('get the request')
-})
+//router.get('/', (req, res) => {
+//  console.log('get request')
+//  res.send('get the request')
+//})
 
 //TEsting more get api 
 
@@ -33,7 +33,6 @@ router.get('/', (req, res) => {
 //post request 
 
 router.post('/user', (req, res) => {
-
   console.log(req.body)
   const user = new User({
     firstname: req.body.firstname,
@@ -42,7 +41,6 @@ router.post('/user', (req, res) => {
     dob: req.body.dob,
     gender: req.body.gender
   });
-
   user.save()
     .then(result => {
       console.log(result)

@@ -17,7 +17,7 @@ const request = require('request');
 
 const mongoose = require('express');
 const connectDB = require('./config/db');
-const { default: axios } = require('axios');
+const axios = require('axios');
 const { response } = require('express');
 connectDB();
 //----------------------------------
@@ -27,7 +27,7 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 
 //-----------------------------------------------------
@@ -39,7 +39,8 @@ app.use('/', apis);
 //app.use(express.static('public'));
 
 // index.html file path  
-const root = path.join(__dirname, 'client/build');
+const root = path.join(__dirname, 'client', 'build');
+console.log(root)
 
 app.get('*', (req, res) => {
     fs.stat(root + req.path, (err) => {
@@ -52,15 +53,15 @@ app.get('*', (req, res) => {
 })
 
 
-app.get('/getdata', (req, res) => {
-    const request = require('request');
-    request('http://www.google.com', function (error, response, body) {
-        console.error('error:', error); // Print the error if one occurred
-        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-        console.log('body:', body); // Print the HTML for the Google homepage.
-    });
+//app.get('/getdata', (req, res) => {
+ //   const request = require('request');
+  //  request('http://www.google.com', function (error, response, body) {
+   //     console.error('error:', error); // Print the error if one occurred
+   //     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+       // console.log('body:', body); // Print the HTML for the Google homepage.
+   /// });
 
-});
+//});
 
 
 

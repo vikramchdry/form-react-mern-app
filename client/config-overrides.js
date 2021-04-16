@@ -11,7 +11,7 @@ module.exports = {
 
             config.proxy = {
                 '/api': {
-                    target: 'https://extensi.io',
+                    target: 'https://extensi.io/api/email-validator.php?email=karol@wp.pl',
                     changeOrigin: true,
                 }
             }

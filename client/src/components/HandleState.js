@@ -48,7 +48,7 @@ const HandleState = (validate) => {
 
 
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         //console.log()
         e.preventDefault();
         setErrors(validate(values));
@@ -56,10 +56,10 @@ const HandleState = (validate) => {
 
         if (values.firstname && values.surname && values.email && values.dob && values.gender) {
 
-            axios.post("/user", values)
+            await axios("http://localhost:5000/user", values)
                 .then((res) => {
                     console.log("Sucessfull send the data");
-                }).catch((error) => {
+                }).catch((error) => {   
                     console.log(error)
                 });
             setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
