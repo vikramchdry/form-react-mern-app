@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from "axios";
 //import concurrently from 'concurrently';
 
@@ -16,6 +16,7 @@ const HandleState = (validate) => {
 
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [data, setData] = useState([])
 
 
     const handleChange = e => {
@@ -30,6 +31,22 @@ const HandleState = (validate) => {
 
     };
 
+    //const api = "https://extensi.io/api/email-validator.php?email=karol@wp.pl";
+    const getData = async () => {
+        await axios.get("https://extensi.io/api/email-validator.php?email=karol@wp.pl")
+            .then(res => res.json())
+            .then(receivedData => setData(receivedData))
+
+    }
+    console.log(data)
+
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+
+
     const handleSubmit = e => {
         //console.log()
         e.preventDefault();
@@ -42,9 +59,11 @@ const HandleState = (validate) => {
                     console.log("Sucessfull send the data");
                 }).catch((error) => {
                     console.log(error)
-                })
+                });
+            setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
         }
-        setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
+       //setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
+        //setValues({ firstname: , surname: values, email: values, dob: values, gender: values })
 
 
 
