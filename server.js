@@ -18,9 +18,13 @@ const connectDB = require('./config/db');
 connectDB();
 //----------------------------------
 
+
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+
 //-----------------------------------------------------
 // send flie using fs method
 

@@ -41,15 +41,14 @@ router.post('/user', (req, res) => {
     dob: req.body.dob,
     gender: req.body.gender
   });
-
-  //user.save().
-  // then(result => {
-  //  console.log(result)
-  //  res.status(200).json({ msg: "succesfully submitted" });
-  // }).catch(err => {
-  //  console.log(err);
-  //  res.status(500).json({ msg: "Error occured" })
-  // })
+  user.save()
+    .then(result => {
+      console.log(result)
+      res.status(200).json({ msg: "succesfully submitted" });
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({ msg: "Error occured" })
+    })
 
   //-----------------------------email api -------------------//
 

@@ -13,7 +13,7 @@ const FormInfo = () => {
     return (
 
         <div className="formInfo">
-            <form className="form__details" onSubmit={handleSubmit} >
+            <form className="form__details" onSubmit={handleSubmit} method="post">
                 <h1>Fill Personal Details</h1>
                 <div className="formInfo__inputs">
                     <input name="firstname" type="text" className="formInfo__input" placeholder="First Name"
