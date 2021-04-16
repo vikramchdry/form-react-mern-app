@@ -38,15 +38,18 @@ const FormInfo = () => {
 
 
                 <div className="formInfo__radioButton">
+                    {errors.gender && <p className="form__light"> {errors.gender}</p>}
                     <p>Gender</p>
                     <input type="radio" id="male" name="gender" value="male" onChange={handleChange}
                         className="form__radioOptions" ></input>
                     <label className="form__label">Male</label><br />
                     <input type="radio" id="female" name="gender" value="female" onChange={handleChange}
-                        className="form__radioOptions"></input>
+                        className="form__radioOptions" />
+
                     <label className="form__label">Female</label><br />
                     <input type="radio" id="other" name="gender" value="Other" onChange={handleChange}
-                        className="form__radioOptions"></input>
+                        className="form__radioOptions" />
+
                     <label className="form__label">Other</label><br />
                 </div>
                 <button className="formInfo__button" type="submit">Send Data</button>

@@ -6,6 +6,8 @@ const path = require('path');
 const cors = require('cors');
 const userSchema = require('./models/UserSchema');
 
+const bodyParser = require('body-parser');
+const request = require('request');
 
 
 
@@ -15,6 +17,8 @@ const userSchema = require('./models/UserSchema');
 
 const mongoose = require('express');
 const connectDB = require('./config/db');
+const { default: axios } = require('axios');
+const { response } = require('express');
 connectDB();
 //----------------------------------
 
@@ -23,6 +27,7 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 
 //-----------------------------------------------------
@@ -47,6 +52,15 @@ app.get('*', (req, res) => {
 })
 
 
+app.get('/getdata', (req, res) => {
+    const request = require('request');
+    request('http://www.google.com', function (error, response, body) {
+        console.error('error:', error); // Print the error if one occurred
+        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        console.log('body:', body); // Print the HTML for the Google homepage.
+    });
+
+});
 
 
 

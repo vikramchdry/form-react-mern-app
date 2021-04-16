@@ -41,6 +41,7 @@
     border-radius: 15px;
 }
 .form__light{
+    font-size: 15px;
     color: rgb(173, 38, 28);
 }
 .datePicker__Birthday{

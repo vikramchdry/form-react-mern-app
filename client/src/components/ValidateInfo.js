@@ -17,8 +17,11 @@ const ValidateInfo = values => {
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
         errors.email = 'Email address is invalid';
     }
+    if (!values.gender) {
+        errors.gender = "Select appropriate gender"
+    }
 
-    return errors;
+    return errors;  
 
 
 }

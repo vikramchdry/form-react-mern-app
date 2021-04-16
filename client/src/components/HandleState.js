@@ -54,6 +54,7 @@ const HandleState = (validate) => {
         setIsSubmitting(true);
 
         if (values.firstname && values.surname && values.email && values.dob && values.gender) {
+
             axios.post("/user", values)
                 .then((res) => {
                     console.log("Sucessfull send the data");

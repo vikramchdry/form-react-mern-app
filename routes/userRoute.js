@@ -6,6 +6,7 @@ const User = require('../models/UserSchema');
 //const userSchema = require('../models/UserSchema');
 
 const bodyParser = require('body-parser');
+const axios = require('axios');
 
 //call router 
 const router = express.Router();
@@ -41,6 +42,7 @@ router.post('/user', (req, res) => {
     dob: req.body.dob,
     gender: req.body.gender
   });
+
   user.save()
     .then(result => {
       console.log(result)
@@ -55,6 +57,7 @@ router.post('/user', (req, res) => {
   
 
 });
+
 
 
 
