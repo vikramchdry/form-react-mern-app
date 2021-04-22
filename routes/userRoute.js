@@ -44,6 +44,7 @@ router.post('/user', (req, res) => {
   user.save()
     .then(result => {
       console.log(result)
+
       res.status(200).json({ msg: "succesfully submitted" });
     }).catch(err => {
       console.log(err);

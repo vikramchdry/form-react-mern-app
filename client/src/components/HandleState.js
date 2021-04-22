@@ -34,6 +34,12 @@ const HandleState = (validate) => {
     const getData = async () => {
         await axios.get("/api/email-validator.php?email=karol@wp.pl")
             .then(res => {
+                if (res.data.status === 200) {
+                    alert("data submit suceesfully")
+                } else {
+                    console.log(res)
+                }
+
                 console.log(res.data)
             })
             .catch(err => {
