@@ -40,7 +40,7 @@ app.use('/', apis);
 
 // index.html file path  
 const root = path.join(__dirname, 'client', 'build');
-console.log(root)
+//console.log(root)
 
 app.get('*', (req, res) => {
     fs.stat(root + req.path, (err) => {
@@ -64,6 +64,14 @@ app.get('*', (req, res) => {
 //});
 
 
+app.get('/verify', async (req, res) => {
+    const api_url = `https://extensi.io/api/email-validator.php?email=karol@wp.pl`;
+    const response = await axios(api_url);
+    const json = await response.json();
+    res.json(json)
+        ;
+
+})
 
 
 

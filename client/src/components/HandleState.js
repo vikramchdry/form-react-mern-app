@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from "axios";
 //import concurrently from 'concurrently';
 
@@ -16,7 +16,7 @@ const HandleState = (validate) => {
 
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
-    //   const [data, setData] = useState([])
+   // const [data, setData] = useState([])
 
 
     const handleChange = e => {
@@ -30,22 +30,23 @@ const HandleState = (validate) => {
         });
 
     };
+    const getData = async () => {
+        await axios.get("/api/email-validator.php?email=karol@wp.pl")
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            });
+    }
+    //getData()
 
-    //const api = "https://extensi.io/api/email-validator.php?email=karol@wp.pl";
-   // const getData = async () => {
-   //   await axios.get("/api/email-validator.php?email=karol@wp.pl")
-   //    .then(res => console.log(res))
-       //.then(receivedData => setData(receivedData))
+    useEffect(() => {
+        getData()
+       
+    }, [])
 
-  //    }
-  //    getData()
-     //console.log(data)
-
-
-    //   useEffect(() => {
-    //      getData();
-    //  }, []);
-
+    //-----------------loading api-----------
 
 
     const handleSubmit = async e => {
@@ -56,13 +57,14 @@ const HandleState = (validate) => {
 
         if (values.firstname && values.surname && values.email && values.dob && values.gender) {
 
-            await axios("http://localhost:5000/user", values)
+            await axios.post("http://localhost:5000/user", values)
                 .then((res) => {
                     console.log("Sucessfull send the data");
                 }).catch((error) => {   
                     console.log(error)
                 });
             setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
+            getData();
         }
         //setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
         //setValues({ firstname: , surname: values, email: values, dob: values, gender: values })

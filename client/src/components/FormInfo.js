@@ -1,16 +1,21 @@
 import React from 'react';
 import HandleState from "./HandleState";
 import validate from "./ValidateInfo";
-
-
 import "./Form.css";
+
+
+
 const FormInfo = () => {
+
+
 
     const { handleChange, values, handleSubmit, errors } = HandleState(validate);
     //console.log(values)
+   
 
 
     return (
+        
 
         <div className="formInfo">
             <form className="form__details" onSubmit={handleSubmit} method="post">

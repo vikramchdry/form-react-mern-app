@@ -1,7 +1,6 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "config-overrides-path": "node_modules/some-preconfigured-rewire",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
@@ -9,7 +8,6 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "react": "^17.0.2",
-    "react-app-rewired": "^2.1.8",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.1"

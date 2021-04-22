@@ -1,4 +1,6 @@
+//import HandleState from "./HandleState";
 
+//import HandleState from "./HandleState"
 const ValidateInfo = values => {
     let errors = {};
     if (!values.firstname) {
@@ -13,10 +15,15 @@ const ValidateInfo = values => {
     }
     //email
     if (!values.email) {
-        errors.email = "Email required"
+    errors.email = "Email required"
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-        errors.email = 'Email address is invalid';
-    }
+      errors.email = 'Email address is invalid';
+     }
+    //if (!values.email) {
+  //      errors.email = HandleState.getData().data[0]
+//}
+
+
     if (!values.gender) {
         errors.gender = "Gender required"
     }
