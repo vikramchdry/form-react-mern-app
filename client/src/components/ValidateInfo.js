@@ -1,4 +1,4 @@
-//import HandleState from "./HandleState";
+//import getData from "./HandleState";
 
 //import HandleState from "./HandleState"
 const ValidateInfo = values => {

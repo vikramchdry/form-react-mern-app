@@ -33,7 +33,7 @@ const HandleState = (validate) => {
     const getData = async () => {
         await axios.get("/api/email-validator.php?email=karol@wp.pl")
             .then(res => {
-                console.log(res)
+                console.log(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -64,7 +64,7 @@ const HandleState = (validate) => {
                     console.log(error)
                 });
             setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
-            getData();
+            getData()
         }
         //setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
         //setValues({ firstname: , surname: values, email: values, dob: values, gender: values })
