@@ -22,23 +22,24 @@ const FormInfo = () => {
                 <h1>Fill Personal Details</h1>
                 <div className="formInfo__inputs">
                     <input name="firstname" type="text" className="formInfo__input" placeholder="First Name"
-                        value={values.firstname} onChange={handleChange} />
+                        value={values.firstname} onChange={handleChange} required />
                     {errors.firstname && <p className="form__light">{errors.firstname}</p>}
 
                 </div>
                 <div className="formInfo__inputs">
                     <input name="surname" type="text" className="formInfo__input" placeholder="Sur Name"
-                        value={values.surname} onChange={handleChange} />
+                        value={values.surname} onChange={handleChange} required />
                     {errors.surname && <p className="form__light">{errors.surname}</p>}
                 </div>
+
                 <div className="formInfo__inputs">
                     <input name="email" type="email" className="formInfo__input" placeholder="Email"
-                        value={values.email} onChange={handleChange} />
+                        value={values.email} onChange={handleChange} required />
                     {errors.email && <p className="form__light"> {errors.email}</p>}
                 </div>
                 <div className="formInfo__inputs">
                     <input name="dob" type="text" className="formInfo__input" placeholder="MM/DD/YYYY"
-                        value={values.dob} onChange={handleChange} />
+                        value={values.dob} onChange={handleChange} required />
                 </div>
 
 

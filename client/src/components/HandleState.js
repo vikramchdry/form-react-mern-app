@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from "axios";
 //import concurrently from 'concurrently';
-
+ 
 const HandleState = (validate) => {
 
 
@@ -30,6 +30,7 @@ const HandleState = (validate) => {
         });
 
     };
+
     const getData = async () => {
         await axios.get("/api/email-validator.php?email=karol@wp.pl")
             .then(res => {
@@ -41,16 +42,16 @@ const HandleState = (validate) => {
     }
     //getData()
 
-    useEffect(() => {
-        getData()
-       
-    }, [])
+  // useEffect(() => {
+     // getData()
+      
+  // }, [])
 
     //-----------------loading api-----------
 
 
     const handleSubmit = async e => {
-        //console.log()
+        console.log(values)
         e.preventDefault();
         setErrors(validate(values));
         setIsSubmitting(true);
@@ -59,12 +60,12 @@ const HandleState = (validate) => {
 
             await axios.post("http://localhost:5000/user", values)
                 .then((res) => {
-                    console.log("Sucessfull send the data");
+                    getData()
+                    //console.log("Sucessfull send the data");
                 }).catch((error) => {   
                     console.log(error)
                 });
             setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
-            getData()
         }
         //setValues({ firstname: '', surname: '', email: '', dob: '', gender: '' })
         //setValues({ firstname: , surname: values, email: values, dob: values, gender: values })
